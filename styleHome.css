@@ -1,0 +1,1336 @@
+/* FONT */
+@font-face {
+	font-family: 'SpaceGrotesk-Regular';
+	src: url(asset/font/SpaceGrotesk-Regular.ttf);
+}
+
+@font-face {
+	font-family: 'GothicA1-Bold';
+	src: url(asset/font/GothicA1-Bold.ttf);
+}
+
+@font-face {
+	font-family: 'GothicA1-Medium';
+	src: url(asset/font/GothicA1-Medium.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+	font-family: 'SpaceGrotesk-Regular';
+	overflow-x: hidden;
+}
+
+/* Tampilan Desktop */
+@media only screen and (min-width: 947px) {
+	header {
+		background-color: #ffffff;
+		z-index: 3;
+		position: fixed;
+		width: 100%;
+	}
+
+	header ul.navMenuMobile li {
+		display: none;
+	}
+
+	header ul.navMenuDesktop {
+		display: flex;
+		list-style: none;
+		background-color: #ffffff;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 100px;
+		border-bottom: 1.5px solid #DDDDDD;
+	}
+
+	header ul.navMenuDesktop li a {
+		text-decoration: none;
+		color: #333333;
+	}
+
+	header ul.navMenuDesktop li a::after {
+		content: '';
+		border-bottom: 1.8px solid #F6D75B;
+		display: block;
+		width: 0;
+		padding-bottom: 8px;
+		margin-bottom: -9.8px;
+		transition: 0.3s;
+	}
+
+	header ul.navMenuDesktop li a:hover::after {
+		width: 50%;
+	}
+
+	header .menuToggle {
+		display: none;
+	}
+
+	.carouselFade::after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(to bottom, rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0));
+		position: absolute;
+		bottom: 0;
+	}
+
+	.carouselFade {
+		width: 100%;
+		height: 880px;
+		background-image: url('asset/1.webp');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		transition: 5s;
+		animation-name: carouselFade;
+		animation-direction: alternate-reverse;
+		animation-play-state: running;
+		animation-timing-function: ease-in-out;
+		animation-duration: 30s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes carouselFade {
+		0% {
+			background-image: url('asset/2.webp');
+		}
+		20% {
+			background-image: url('asset/3.webp');
+		}
+		40% {
+			background-image: url('asset/4.webp');
+		}
+		60% {
+			background-image: url('asset/5.webp');
+		}
+		80% {
+			background-image: url('asset/1.webp');
+		}
+		100% {
+			background-image: url('asset/2.webp');
+		}
+	}	
+
+	.carouselFade .jumbotron .text {
+		top: 220px;
+		z-index: 2;
+		position: relative;
+		text-align: center;
+	}
+
+	.carouselFade .panah {
+		position: absolute;
+		transform: rotate(-23deg);
+		z-index: 2;
+		left: 33%;
+		top: 52%;
+		width: 60px;
+		height: 115px;
+	}
+
+	.carouselFade .panah2 {
+		position: absolute;
+		transform: scaleX(-1) rotate(-23deg);
+		z-index: 2;
+		left: 63%;
+		top: 52%;
+		width: 60px;
+		height: 115px;
+	}
+
+	.carouselFade .text h1.title {
+		font-family: 'GothicA1-Bold';
+		font-size: 55px;
+		font-weight: 900;
+		color: #ffffff;
+		-webkit-text-stroke: 1.5px #ffffff;
+		text-align: center;
+		text-shadow: 3px 3px rgba(81, 81, 81, 0.4);
+	}
+
+	.carouselFade .text h1.title br,
+	.carouselFade .text p br {
+		display: none;
+	}
+
+	.carouselFade .text h1.title span {
+		font-size: 50px;
+		font-weight: bold;
+		text-shadow: 2px 2px rgba(81, 81, 81, 0.4);
+	}
+
+	.carouselFade .text h4.subtitle {
+		font-size: 45px;
+		color: transparent;
+		-webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.6);
+		text-align: center;
+		margin-top: -5px;
+	}
+
+	.carouselFade .text p {
+		font-size: 18px;
+		color: #ffffff;
+		line-height: 23px;
+		text-align: center;
+		margin-top: 12px;
+		text-shadow: 2px 2px rgba(81, 81, 81, 0.4);
+	}	
+
+	.carouselFade .text p span {
+		font-weight: bold;
+	}
+
+	.carouselFade .text span.line {
+		top: 14%;
+		left: 49%;
+		position: absolute;
+		z-index: -1;
+		height: 25px;
+		width:  380px;
+		background-color: #084A7A;
+	}
+
+	/* .carouselFade .text .button {
+		margin-top: 45px;
+		text-align: center;
+		position: relative;
+		z-index: 2;
+	} */
+
+	.carouselFade .text button.register {
+		margin-top: 45px;
+		text-align: center;
+		width: 200px;
+		height: 73px;
+		font-size: 15px;
+		box-shadow: inset 0 0 0 #F6D75B;
+		background-color: transparent;
+		border: 2px solid #F6D75B;
+		color: #F6D75B;
+		transition: ease-out 0.7s;
+	}	
+
+	.carouselFade .text button.register:hover {
+		box-shadow: inset 300px 0 0 0 #F6D75B;
+		cursor: pointer;
+		color: #ffffff;
+		text-shadow: 0px 0px 8px #bbbbbb;
+	}	
+
+	.myProject .clouds {
+		position: absolute;
+		top: 43%;
+		left: 0;
+		width: 100%;
+		height: 1160px;
+	}
+
+	.myProject .clouds img {
+		position: absolute;
+		bottom: 0;
+		width: 1100px;
+		animation: clouds calc(8s *var(--i)) linear infinite;
+	}
+
+	@keyframes clouds {
+		0% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(100%);
+		}
+	}
+
+	.myProject .content {
+		position: relative;
+		z-index: 2;
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+
+	.myProject .content h1.title,
+	.news .content h1.title {
+		font-family: 'GothicA1-Bold';
+		font-size: 45px;
+		font-weight: bolder;
+		color: #084A7A;
+		-webkit-text-stroke: 2.2px #084A7A;
+		text-align: center;
+	}
+
+	.myProject .content p {
+		font-size: 20px;
+		color: #939393;
+		line-height: 23px;
+		text-align: center;
+		margin-top: 15px;
+	}
+
+	.myProject .content .line {
+		top: 30%;
+		left: 49%;
+		position: absolute;
+		z-index: -1;
+		height: 25px;
+		width:  160px;
+		background-color: #F6D75B;
+	}
+
+	.myProject .imgGen input[type="radio"] {
+		display: none;
+	}
+
+	.myProject .imgGen {
+		position: absolute;
+		margin-top: 15px;
+		height: 346px;
+		width: 100%;
+		overflow-y: hidden;
+	}
+
+	.myProject .imgGen .img {
+		display: flex;
+		flex-direction: column;
+		transition: 2s;
+	}
+
+	.myProject .imgGen .img #img1 img {
+		position: relative;
+		z-index: 2;
+		top: -30px;
+		left: 30%;
+	}
+
+	.myProject .imgGen .img #img2 img {
+		position: relative;
+		z-index: 2;
+		left: 30%;
+	}
+
+	.myProject .imgGen .img #img3 img {
+		position: relative;
+		z-index: 2;
+		left: 25%;
+	}
+
+	.myProject .imgGen .img #range1 {
+		position: relative;
+		z-index: 3;
+		width: 400px;
+		top: 150px;
+		left: 35%;
+		height: 50px;
+		cursor: grab;
+		opacity: 0;
+	}
+
+	.myProject .imgGen .img #range2 {
+		position: relative;
+		z-index: 3;
+		width: 400px;
+		top: 180px;
+		left: 32%;
+		height: 50px;
+		cursor: grab;
+		opacity: 0;
+	}
+
+	.myProject .imgGen .img #range3 {
+		position: relative;
+		z-index: 3;
+		width: 400px;
+		top: 200px;
+		left: 35%;
+		height: 50px;
+		cursor: grab;
+		opacity: 0;
+	} 
+
+	#gen1:checked ~ .first {
+		margin-top: 0;
+	}
+
+	#gen2:checked ~ .first {
+		margin-top: -25%;
+	}
+
+	#gen3:checked ~ .first {
+		margin-top: -53%;
+	}
+
+	.myProject .img360 {
+		position: relative;
+		left: 45%;
+		top: 370px;
+	}
+
+	.myProject .imgGen .textMove {
+		display: flex;
+		position: absolute;
+		top: 0;
+	}
+
+	.myProject .imgGen .textMove .listTextGen {
+		height: 346px;
+		overflow: hidden;
+	}
+
+	.myProject .imgGen .textMove .textGen p,
+	.myProject .imgGen .textMove .listTextGen p {
+		font-family: 'GothicA1-Bold';
+		font-size: 260px;
+		color: transparent;
+		-webkit-text-stroke: 1px rgba(170, 170, 170, 0.5);
+		transition: 2s;
+	}
+
+	.myProject .imgGen .slideControls {
+		display: flex;
+		position: absolute;
+		z-index: 2;
+		top: 100px;
+		left: 91%;
+		flex-direction: column;
+	}
+
+	.myProject .imgGen .slideControls .btn {
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		border-radius: 100%;
+		background-color: rgba(103, 169, 218, 0.3);
+	}
+
+	.myProject .imgGen .slideControls .btn:nth-child(2), 
+	.myProject .imgGen .slideControls .btn:nth-child(3) {
+		margin-top: 20px;
+	}
+
+	.myProject .nameProject {
+		position: absolute;
+		left: 50%;
+		z-index: 2;
+		top: 1100px;
+	}	
+
+	.myProject .nameProject .lingkaran1 {
+		position: absolute;
+		width: 21px;
+		height: 21px;
+		border: 2px solid #FF7F00;
+		border-radius: 100%;
+	}
+
+	.myProject .nameProject .lingkaran2 {
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		width: 13px;
+		height: 13px;
+		background-color: #FF7F00;
+		border-radius: 100%;
+	}
+
+	.myProject .nameProject span.line {
+		position: absolute;
+		z-index: 3;
+		top: 10px;
+		left: 20px;
+		width: 320px;
+		height: 1.5px;
+		background-color: #FF7F00;
+	}
+
+	.myProject .nameProject span.line:nth-child(4) {
+		transform: rotate(90deg);
+		position: absolute;
+		z-index: 3;
+		top: 73px;
+		left: 277px;
+		width: 125px;
+		height: 1.5px;
+		background-color: #FF7F00;
+	}
+
+	.myProject .imgGen .kotak {
+		border: solid 2px #FF7F00;
+		position: absolute;
+		top: 245px;
+		left: 67%;
+		z-index: 2;
+	}
+
+	.myProject .imgGen .kotak .name {
+		height: 50px;
+		overflow-y: hidden;
+		color: #FF7F00;
+		font-size: 18px;
+		text-align: center;
+		margin-top: 25px;
+	}
+
+	.myProject .imgGen .kotak .name p {
+		transition: 2s;
+	}
+
+	.myProject .imgGen .kotak .name p:nth-child(1) {
+		margin-top: 13px;	
+	}
+
+	.myProject .imgGen .kotak .name p:nth-child(2) {
+		margin-top: 15px;
+	}
+
+	.myProject .imgGen .kotak .name p:nth-child(3) {
+		margin-top: 15px;
+		margin-bottom: 15px;	
+	}
+
+	#gen1:checked ~ .kotak .name p:nth-child(1) {
+		margin-top: 13px;
+	}
+
+	#gen2:checked ~ .kotak .name p:nth-child(1) {
+		margin-top: -17%;
+	}
+
+	#gen3:checked ~ .kotak .name p:nth-child(1) {
+		margin-top: -40%;
+	}
+
+	#gen1:checked ~ .slideControls .btn:nth-child(1) {
+		box-shadow: 0px 0px 0px 2px #ffffff inset, 0px 0px 0px 2px #084A7A;
+		transform: scale(-0.9, -0.9);
+		background: #084A7A;
+	}
+
+	#gen2:checked ~  .slideControls .btn:nth-child(2) {
+		box-shadow: 0px 0px 0px 2px #ffffff inset, 0px 0px 0px 2px #084A7A;
+		transform: scale(-0.9, -0.9);
+		background: #084A7A;
+	}
+
+	#gen3:checked ~ .slideControls .btn:nth-child(3) {
+		box-shadow: 0px 0px 0px 2px #ffffff inset, 0px 0px 0px 2px #084A7A;
+		transform: scale(-0.9, -0.9);
+		background: #084A7A;
+	}
+
+	#gen1:checked ~ .textMove .listTextGen p:nth-child(1) {
+		margin-top: 0;
+	}
+
+	#gen2:checked ~ .textMove .listTextGen p:nth-child(1) {
+		margin-top: -215%;
+	}
+
+	#gen3:checked ~ .textMove .listTextGen p:nth-child(1) {
+		margin-top: -430%;
+	}
+
+	.achievements {
+		margin-top: 440px;
+	}
+
+	.achievements .content {
+		position: absolute;
+		z-index: 1;
+		top: -5%;
+	}
+
+	.achievements .content h1.title {
+		font-family: 'GothicA1-Bold';
+		font-size: 45px;
+		font-weight: bolder;
+		color: #084A7A;
+		-webkit-text-stroke: 2.2px #084A7A;
+		margin-left: 100px;
+	}
+
+	.achievements .content span.line {	
+		position: absolute;
+		z-index: -1;
+		bottom: 7px;
+		left: 170px;
+		width: 260px;
+		height: 25px;
+		background-color: #F6D75B;
+	}
+
+ 	.achievements .scrollMenu {
+		overflow: auto;
+		padding-bottom: 40px;
+	}
+
+	.scrollMenu,
+	.scrollMenu .timeLine,
+	.scrollMenu .listImg {
+		transform: rotateX(180deg);
+	}
+
+	.achievements .scrollMenu .timeLine {
+		display: flex;
+		margin: 10px 0 0 100px;
+	}
+
+	.achievements .scrollMenu .timeLine .timeLine2010 {
+		display: flex;
+		align-items: center;
+	}
+
+	.achievements .scrollMenu .timeLine .timeLine2011,
+	.achievements .scrollMenu .timeLine .timeLine2012,
+	.achievements .scrollMenu .timeLine .timeLine2013,
+	.achievements .scrollMenu .timeLine .timeLine2014,
+	.achievements .scrollMenu .timeLine .timeLine2015,
+	.achievements .scrollMenu .timeLine .timeLine2016,
+	.achievements .scrollMenu .timeLine .timeLine2017,
+	.achievements .scrollMenu .timeLine .timeLine2018,
+	.achievements .scrollMenu .timeLine .timeLine2019,
+	.achievements .scrollMenu .timeLine .timeLine2020,
+	.achievements .scrollMenu .timeLine .timeLine2021,
+	.achievements .scrollMenu .timeLine .timeLine2022 {
+		display: flex;
+		margin-left: 15px;
+		align-items: center;
+	}
+
+	.achievements .scrollMenu .timeLine .timeLine2010 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2011 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2012 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2013 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2014 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2015 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2016 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2017 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2018 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2019 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2020 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2021 .lingkaran,
+	.achievements .scrollMenu .timeLine .timeLine2022 .lingkaran {
+		position: relative;
+		width: 21px;
+		height: 21px;
+		border: 2px solid #cccccc;
+		border-radius: 100%;
+	}
+
+	.achievements .scrollMenu .timeLine .timeLine2010 p.tahun, 
+	.achievements .scrollMenu .timeLine .timeLine2011 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2012 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2013 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2014 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2015 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2016 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2017 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2018 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2019 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2020 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2021 p.tahun,
+	.achievements .scrollMenu .timeLine .timeLine2022 p.tahun {
+		font-size: 18px;
+		font-weight: bold;
+		color: #333333;
+		margin-left: 18px;
+	}
+
+	.achievements .scrollMenu .timeLine .timeLine2010 .line,
+	.achievements .scrollMenu .timeLine .timeLine2011 .line,
+	.achievements .scrollMenu .timeLine .timeLine2012 .line,
+	.achievements .scrollMenu .timeLine .timeLine2013 .line,
+	.achievements .scrollMenu .timeLine .timeLine2014 .line,
+	.achievements .scrollMenu .timeLine .timeLine2015 .line,
+	.achievements .scrollMenu .timeLine .timeLine2016 .line,
+	.achievements .scrollMenu .timeLine .timeLine2017 .line,
+	.achievements .scrollMenu .timeLine .timeLine2018 .line,
+	.achievements .scrollMenu .timeLine .timeLine2019 .line,
+	.achievements .scrollMenu .timeLine .timeLine2020 .line,
+	.achievements .scrollMenu .timeLine .timeLine2021 .line,
+	.achievements .scrollMenu .timeLine .timeLine2022 .line {
+		position: relative;
+		background-color: #cccccc;
+		margin-left: 15px;
+	}
+
+	.achievements .scrollMenu .listImg {
+		margin: 10px 0 0 135px;
+		white-space: nowrap;
+		display: flex;
+	}
+
+	.scrollMenu::-webkit-scrollbar {
+		height: 12px;
+		cursor: pointer;
+	}
+
+	.scrollMenu::-webkit-scrollbar-track {
+		background: #cdcdcd;
+		border-radius: 100vw;
+		margin-block: 1100px 100px;
+		writing-mode: vertical-lr;
+	}
+
+	.scrollMenu::-webkit-scrollbar-thumb {
+		background: #084A7A;
+		border-radius: 100vw;
+	}
+
+	.achievements .scrollMenu .listImg .list2010 {
+		border: solid 2px #FF7F00;
+		display: inline-block;
+		padding: 25px;
+	}
+
+	.achievements .scrollMenu .listImg .list2011, 
+	.achievements .scrollMenu .listImg .list2012,
+	.achievements .scrollMenu .listImg .list2013,
+	.achievements .scrollMenu .listImg .list2014,
+	.achievements .scrollMenu .listImg .list2015,
+	.achievements .scrollMenu .listImg .list2016,
+	.achievements .scrollMenu .listImg .list2017,
+	.achievements .scrollMenu .listImg .list2018,
+	.achievements .scrollMenu .listImg .list2019,
+	.achievements .scrollMenu .listImg .list2020,
+	.achievements .scrollMenu .listImg .list2021,
+	.achievements .scrollMenu .listImg .list2022 {
+		border: solid 2px #FF7F00;
+		display: inline-block;
+		padding: 25px;
+	}
+
+	.achievements .scrollMenu .listImg .list2011 {
+		margin-left: 105px;
+	}
+
+	.achievements .scrollMenu .listImg .list2012 {
+		margin-left: 100px;
+	}
+
+	.achievements .scrollMenu .listImg .list2013 {
+		margin-left: 108px;
+	}
+
+	.achievements .scrollMenu .listImg .list2014 {
+		margin-left: 123px;
+	}
+
+	.achievements .scrollMenu .listImg .list2015 {
+		margin-left: 120px;
+	}
+
+	.achievements .scrollMenu .listImg .list2016 {
+		margin-left: 125px;
+	}
+
+	.achievements .scrollMenu .listImg .list2017 {
+		margin-left: 140px;
+	}
+
+	.achievements .scrollMenu .listImg .list2018 {
+		margin-left: 115px;
+	}
+
+	.achievements .scrollMenu .listImg .list2019 {
+		margin-left: 120px;
+	}
+
+	.achievements .scrollMenu .listImg .list2020 {
+		margin-left: 110px;
+	}
+
+	.achievements .scrollMenu .listImg .list2021 {
+		margin-left: 113px;
+	}
+
+	.achievements .scrollMenu .listImg .list2022 {
+		margin-left: 120px;
+	}
+
+	.achievements .scrollMenu .listImg .list2010 img, 
+	.achievements .scrollMenu .listImg .list2011 img, 
+	.achievements .scrollMenu .listImg .list2012 img,
+	.achievements .scrollMenu .listImg .list2013 img,
+	.achievements .scrollMenu .listImg .list2014 img,
+	.achievements .scrollMenu .listImg .list2015 img,
+	.achievements .scrollMenu .listImg .list2016 img,
+	.achievements .scrollMenu .listImg .list2017 img,
+	.achievements .scrollMenu .listImg .list2018 img,
+	.achievements .scrollMenu .listImg .list2019 img,
+	.achievements .scrollMenu .listImg .list2020 img,
+	.achievements .scrollMenu .listImg .list2021 img,
+	.achievements .scrollMenu .listImg .list2022 img {
+		background-position: center;
+		object-fit: cover;
+		height: 158px;
+		width: 100%;
+	}
+
+	.achievements .scrollMenu .listImg .list2010 li, 
+	.achievements .scrollMenu .listImg .list2012 li,
+	.achievements .scrollMenu .listImg .list2011 li, 
+	.achievements .scrollMenu .listImg .list2013 li,
+	.achievements .scrollMenu .listImg .list2014 li,
+	.achievements .scrollMenu .listImg .list2015 li,
+	.achievements .scrollMenu .listImg .list2016 li,
+	.achievements .scrollMenu .listImg .list2017 li,
+	.achievements .scrollMenu .listImg .list2018 li,
+	.achievements .scrollMenu .listImg .list2019 li,
+	.achievements .scrollMenu .listImg .list2020 li,
+	.achievements .scrollMenu .listImg .list2021 li,
+	.achievements .scrollMenu .listImg .list2022 li {
+		color: #FF7F00;
+		font-size: 17px;
+		list-style: none;
+		margin-top: 10px;
+	}
+
+	.news .content {
+		margin: 0 100px;
+	}
+
+	.news .content h1.title {
+		text-align: center;
+	}
+
+	.news .content span.line {	
+		position: absolute;
+		z-index: -1;
+		top: 6%;
+		left: 46%;
+		width: 175px;
+		height: 25px;
+		background-color: #F6D75B;
+	}
+
+	.news .textSlogan {
+		position: absolute;
+		top: 0%;
+		z-index: -1;
+	}
+
+	.news .textSlogan p {
+		font-family: 'GothicA1-Bold';
+		font-size: 80px;
+		color: transparent;
+		-webkit-text-stroke: 1px rgba(170, 170, 170, 0.5);
+	}
+
+	.news .info {
+		margin: 40px 100px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.news .info .info1,
+	.news .info .info2,
+	.news .info .info3 {
+		cursor: pointer;
+		width: 370px;
+	}
+
+	.news .info .info1 p, 
+	.news .info .info2 p,
+	.news .info .info3 p {
+		font-size: 17px;
+		color: #333333;
+		line-height: 23px;
+		margin-top: 10px;
+	}
+
+	footer .footer {
+		display: flex;
+		margin: 70px 100px 0;
+		border-top: 1.5px solid #DDDDDD;
+		padding: 30px 0;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	footer .footer .copyright {
+		display: flex;
+		align-items: center;
+	}
+
+	footer .footer .copyright p {
+		font-family: 'GothicA1-Medium';
+		color: #939393;
+	}
+
+	footer .footer .toggle {
+		margin-left: 30px;
+	}
+
+	footer .footer .listFooter {
+		display: flex;
+	}
+
+	footer .footer .listFooter li {
+		list-style: none;
+	}
+
+	footer .footer .listFooter li a {
+		text-decoration: none;
+		color: #333333;
+		font-weight: bold;
+	}
+
+	footer .footer .listFooter li:nth-child(2) {
+		margin-left: 60px;
+	}
+
+	footer .footer .listFooter li:nth-child(3) {
+		margin-left: 60px;
+	}
+
+	footer .footer .listFooter li:nth-child(4) {
+		margin-left: 60px;
+	}
+}
+/* Akhir Tampilan Desktop */
+
+/* Tampilan Mobile */
+@media only screen and (max-width: 576px) {
+
+	header {
+		background-color: #ffffff;
+		position: fixed;
+		z-index: 5;
+		width: 100%;
+	}
+
+	header ul.navMenuDesktop .logo {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		z-index: 2;
+	}
+
+	header ul.navMenuDesktop .logo a img {
+		width: 70px;
+		height: 70px;
+		align-items: center;
+	}
+
+	header ul.navMenuDesktop {
+		border-bottom: 1.5px solid #DDDDDD;
+	}	
+
+	header ul.navMenuDesktop li {
+		display: none;
+	}
+
+	header ul.navMenuMobile {
+		display: flex;
+		position: absolute;
+		flex-direction: column;
+		right: 0;
+		list-style: none;
+		background-color: #ffffff;
+		top: 0;
+		height: 100vh;
+		width: 70%;
+		align-items: flex-end;
+		z-index: -1;
+		transform: translateX(100%);
+		transition: all 1s;
+	}
+
+	header ul.navMenuMobile.slide { 
+		z-index: -1;
+		transform: translateX(0);
+	}
+
+	header ul.navMenuMobile li:nth-child(1) {
+		margin-top: 130px;
+		margin-right: 30px;
+	}
+
+	header ul.navMenuMobile li:nth-child(2) {
+		margin-top: 60px;
+		margin-right: 30px;
+	}
+
+	header ul.navMenuMobile li:nth-child(3) {
+		margin-top: 60px;
+		margin-right: 30px;
+	}
+
+	header ul.navMenuMobile li:nth-child(4) {
+		margin-top: 60px;
+		margin-right: 30px;
+	}
+
+	header ul.navMenuMobile li:nth-child(5) {
+		margin-top: 60px;
+		margin-right: 30px;
+	}
+
+	header ul.navMenuMobile li:nth-child(6) {
+		margin-top: 60px;
+		margin-right: 30px;
+	}
+
+	header ul.navMenuMobile li a {
+		font-size: 15px;
+		text-decoration: none;
+		color: #333333;
+	}
+
+	.menuToggle {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		margin-left: 85%;
+		top: 25px;
+		z-index: 3;
+		height: 20px;
+		justify-content: space-between;
+	}
+
+	.menuToggle input {
+		position: absolute;
+		width: 38px;
+		height: 28px;
+		left: -6px;
+		top: -3px;
+		opacity: 0;
+		cursor: pointer;
+		z-index: 4;
+	}
+
+	.menuToggle span {
+		display: block;
+		background-color: #dddddd;
+		width: 24px;
+		height: 2px;
+		background-color: #333333;
+		transition: all 0.5s;
+	}
+
+	.menuToggle span:nthchild(2) {
+		transform-origin: 0 0;
+	}
+
+	.menuToggle span:nthchild(4) {
+		transform-origin: 0 100%;
+	}
+
+	.menuToggle input:checked ~ span:nth-child(2) {
+		transform: rotate(45deg) translate(7px, 6px);
+	}
+
+	.menuToggle input:checked ~ span:nth-child(4) {
+		transform: rotate(-45deg) translate(7px, -6px);
+	}	
+
+	.menuToggle input:checked ~ span:nth-child(3) {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	.carouselFade::after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(to bottom, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.5), rgba(51, 51, 51, 0));
+		position: absolute;
+		bottom: 0;
+	} 
+
+	.carouselFade {
+		width: 100%;
+		height: 580px;
+		background-image: url('asset/1.webp');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		transition: 5s;
+		animation-name: carouselFade;
+		animation-direction: alternate-reverse;
+		animation-play-state: running;
+		animation-timing-function: ease-in-out;
+		animation-duration: 30s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes carouselFade {
+		0% {
+			background-image: url('asset/2.webp');
+		}
+		20% {
+			background-image: url('asset/3.webp');
+		}
+		40% {
+			background-image: url('asset/4.webp');
+		}
+		60% {
+			background-image: url('asset/5.webp');
+		}
+		80% {
+			background-image: url('asset/1.webp');
+		}
+		100% {
+			background-image: url('asset/2.webp');
+		}
+	}
+
+/*	.carouselFade .jumbotron {
+		position: relative;
+		top: 30%;
+	}
+
+	.carouselFade .jumbotron .text {
+		position: relative;
+		z-index: 4;
+	}
+
+	.carouselFade .panah {
+		position: absolute;
+		transform: rotate(358deg);
+		z-index: 2;
+		left: 20%;
+		top: 85%;
+		width: 40px;
+		height: 90px;
+	}
+
+	.carouselFade .panah2 {
+		position: absolute;
+		transform: scaleX(-1) rotate(-356deg);
+		z-index: 2;
+		left: 72%;
+		top: 85%;
+		width: 40px;
+		height: 90px;
+	}
+
+	.carouselFade .text h1.title {
+		font-family: 'GothicA1-Bold';
+		font-size: 38px;
+		font-weight: 900;
+		letter-spacing: 3%;
+		line-height: 130%;
+		color: #ffffff;
+		-webkit-text-stroke: 1px #ffffff;
+		text-align: center;
+		text-shadow: 2px 2px rgba(81, 81, 81, 0.4);
+	}
+
+	.carouselFade .text h1.title span {
+		font-size: 50px;
+		font-weight: bold;
+	}
+
+	.carouselFade .text h4.subtitle {
+		font-size: 25px;
+		letter-spacing: 2%;
+		color: transparent;
+		-webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.6);
+		text-align: center;
+		margin-top: 5px;
+	}
+
+	.carouselFade .text p {
+		font-size: 17px;
+		color: #ffffff;
+		line-height: 23px;
+		text-align: center;
+		margin-top: 5px;
+		text-shadow: 2px 1px rgba(81, 81, 81, 0.4);
+	}
+
+	.carouselFade .jumbotron .text p span {
+		font-weight: bold;
+	}
+
+	.carouselFade .jumbotron .text span.line {
+		top: 42%;
+		left: 30%;
+		position: absolute;
+		z-index: -1;
+		height: 18px;
+		width:  250px;
+		background-color: #084A7A;
+	}
+
+	.carouselFade .button {
+		margin-top: 25px;
+		text-align: center;
+		position: relative;
+		z-index: 5;
+	}
+
+	.carouselFade .button button.register {
+		width: 181px;
+		height: 67px;
+		font-size: 15px;
+		box-shadow: inset 0 0 0 #F6D75B;
+		background-color: transparent;
+		border: 2px solid #F6D75B;
+		color: #F6D75B;
+		transition: ease-out 0.7s;
+	}	
+
+	.carouselFade .button .text button.register:hover {
+		box-shadow: inset 300px 0 0 0 #F6D75B;
+		cursor: pointer;
+		color: #ffffff;
+		font-size: 15px;
+	}	
+
+	.myProject .clouds {
+		position: absolute;
+		top: 30%;
+		left: 0;
+		width: 100%;
+		height: 1160px;
+	}
+
+	.myProject .clouds img {
+		position: absolute;
+		bottom: 0;
+		width: 1100px;
+		animation: clouds calc(8s *var(--i)) linear infinite;
+	} */
+
+	.myProject {
+		display: none;
+	}
+
+	/* @keyframes clouds {
+		0% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(100%);
+		}
+	}
+
+	.myProject .content {
+		position: relative;
+		z-index: 5;
+		margin-top: 300px;
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+
+	.myProject .content h1.title {
+		font-family: 'GothicA1-Bold';
+		font-size: 38px;
+		font-weight: bolder;
+		letter-spacing: 2%;
+		color: #084A7A;
+		-webkit-text-stroke: 2px #084A7A;
+		text-align: center;
+	}
+
+	.myProject .content p {
+		font-size: 17px;
+		color: #939393;
+		line-height: 23px;
+		text-align: center;
+		margin-top: 15px;
+	}
+
+	.myProject .content .line {
+		top: 25%;
+		left: 47%;
+		position: absolute;
+		z-index: -1;
+		height: 18px;
+		width:  130px;
+		background-color: #F6D75B;
+	}
+
+	.myProject .img360 {
+		position: relative;
+		left: 45%;
+		top: 370px;
+	}
+
+	.myProject .imgGen .textMove {
+		display: flex;
+		position: absolute;
+		top: 0;
+	}
+
+	.myProject .imgGen .textMove .listTextGen {
+		height: 346px;
+		overflow: hidden;
+	}
+
+	.myProject .imgGen .textMove .textGen p,
+	.myProject .imgGen .textMove .listTextGen p {
+		font-family: 'GothicA1-Bold';
+		font-size: 100px;
+		color: transparent;
+		-webkit-text-stroke: 1px rgba(170, 170, 170, 0.5);
+		transition: 2s;
+	}
+
+	.myProject .imgGen input[type="radio"] {
+		display: none;
+	}
+
+	.myProject .imgGen {
+		position: absolute;
+		margin-top: 15px;
+		height: 122px;
+		width: 100%;
+		overflow-y: auto;
+	}
+
+	.myProject .imgGen .img {
+		display: flex;
+		flex-direction: column;
+		transition: all 2s;
+	}
+
+	.myProject .imgGen .img #img1 img {
+		position: relative;
+		z-index: 2;
+		top: -18px;
+		left: 27%;
+	}
+
+	.myProject .imgGen .img #img2 img {
+		position: relative;
+		z-index: 2;
+		left: 28%;
+	}
+
+	.myProject .imgGen .img #img3 img {
+		position: relative;
+		z-index: 2;
+		left: 23%;
+	} */
+
+	.achievements {
+		display: none;
+	}
+
+	.news {
+		display: none;
+	}
+
+	.sponsor {
+		display: none;
+	}
+
+	footer {
+		display: none;
+	}
+}
+/* Akhir Tampilan Mobile */
