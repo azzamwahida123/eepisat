@@ -76,7 +76,7 @@ body {
 		display: block;
 		width: 100%;
 		height: 100%;
-		background-image: linear-gradient(to bottom, rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0));
+		background-image: linear-gradient(to bottom, rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0));
 		position: absolute;
 		bottom: 0;
 	}
@@ -84,41 +84,10 @@ body {
 	.carouselFade {
 		width: 100%;
 		height: 880px;
-		background-image: url('asset/1.webp');
+		background-image: url('asset/2.webp');
 		background-size: cover;
 		background-position: center;
-		background-repeat: no-repeat;
-
-		transition: 5s;
-		animation-name: carouselFade;
-		animation-direction: alternate-reverse;
-		animation-play-state: running;
-		animation-timing-function: ease-in-out;
-		animation-duration: 30s;
-		animation-fill-mode: forwards;
-		animation-iteration-count: infinite;
 	}
-
-	@keyframes carouselFade {
-		0% {
-			background-image: url('asset/2.webp');
-		}
-		20% {
-			background-image: url('asset/3.webp');
-		}
-		40% {
-			background-image: url('asset/4.webp');
-		}
-		60% {
-			background-image: url('asset/5.webp');
-		}
-		80% {
-			background-image: url('asset/1.webp');
-		}
-		100% {
-			background-image: url('asset/2.webp');
-		}
-	}	
 
 	.carouselFade .jumbotron .text {
 		top: 220px;
@@ -198,13 +167,6 @@ body {
 		width:  380px;
 		background-color: #084A7A;
 	}
-
-	/* .carouselFade .text .button {
-		margin-top: 45px;
-		text-align: center;
-		position: relative;
-		z-index: 2;
-	} */
 
 	.carouselFade .text button.register {
 		margin-top: 45px;
@@ -899,6 +861,9 @@ body {
 
 /* Tampilan Mobile */
 @media only screen and (max-width: 576px) {
+	body {
+		background-color: green;
+	}
 
 	header {
 		background-color: #ffffff;
@@ -1050,43 +1015,12 @@ body {
 	.carouselFade {
 		width: 100%;
 		height: 580px;
-		background-image: url('asset/1.webp');
+		background-image: url('asset/2.webp');
 		background-size: cover;
 		background-position: center;
-		background-repeat: no-repeat;
-
-		transition: 5s;
-		animation-name: carouselFade;
-		animation-direction: alternate-reverse;
-		animation-play-state: running;
-		animation-timing-function: ease-in-out;
-		animation-duration: 30s;
-		animation-fill-mode: forwards;
-		animation-iteration-count: infinite;
 	}
 
-	@keyframes carouselFade {
-		0% {
-			background-image: url('asset/2.webp');
-		}
-		20% {
-			background-image: url('asset/3.webp');
-		}
-		40% {
-			background-image: url('asset/4.webp');
-		}
-		60% {
-			background-image: url('asset/5.webp');
-		}
-		80% {
-			background-image: url('asset/1.webp');
-		}
-		100% {
-			background-image: url('asset/2.webp');
-		}
-	}
-
-/*	.carouselFade .jumbotron {
+	.carouselFade .jumbotron {
 		position: relative;
 		top: 30%;
 	}
@@ -1094,26 +1028,27 @@ body {
 	.carouselFade .jumbotron .text {
 		position: relative;
 		z-index: 4;
+		text-align: center;
 	}
 
 	.carouselFade .panah {
 		position: absolute;
-		transform: rotate(358deg);
+		transform: rotate(360deg);
 		z-index: 2;
-		left: 20%;
-		top: 85%;
+		left: 10%;
+		top: 53%;
 		width: 40px;
-		height: 90px;
+		height: 77px;
 	}
 
 	.carouselFade .panah2 {
 		position: absolute;
-		transform: scaleX(-1) rotate(-356deg);
+		transform: scaleX(-1) rotate(-355deg);
 		z-index: 2;
-		left: 72%;
-		top: 85%;
+		left: 79%;
+		top: 53%;
 		width: 40px;
-		height: 90px;
+		height: 77px;
 	}
 
 	.carouselFade .text h1.title {
@@ -1137,7 +1072,7 @@ body {
 		font-size: 25px;
 		letter-spacing: 2%;
 		color: transparent;
-		-webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.6);
+		-webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.6);
 		text-align: center;
 		margin-top: 5px;
 	}
@@ -1156,25 +1091,36 @@ body {
 	}
 
 	.carouselFade .jumbotron .text span.line {
-		top: 42%;
+		top: 30%;
 		left: 30%;
 		position: absolute;
 		z-index: -1;
 		height: 18px;
-		width:  250px;
+		width:  230px;
 		background-color: #084A7A;
 	}
 
-	.carouselFade .button {
-		margin-top: 25px;
+	.carouselFade button.register {
+		margin-top: 18px;
 		text-align: center;
 		position: relative;
 		z-index: 5;
+		width: 170px;
+		height: 58px;
+		font-size: 15px;
+		background-color: #F6D75B;
+		color: #ffffff;
+		font-size: 15px;
+		cursor: pointer;
+		border: none;
 	}
 
-	.carouselFade .button button.register {
-		width: 181px;
-		height: 67px;
+	.carouselFade .text button.register {
+		margin-top: 18px;
+		text-align: center;
+		z-index: 3;
+		width: 170px;
+		height: 58px;
 		font-size: 15px;
 		box-shadow: inset 0 0 0 #F6D75B;
 		background-color: transparent;
@@ -1183,33 +1129,34 @@ body {
 		transition: ease-out 0.7s;
 	}	
 
-	.carouselFade .button .text button.register:hover {
+	.carouselFade .text button.register:hover {
 		box-shadow: inset 300px 0 0 0 #F6D75B;
 		cursor: pointer;
 		color: #ffffff;
-		font-size: 15px;
+		text-shadow: 0px 0px 8px #bbbbbb;
 	}	
 
+	/* .myProject {
+		position: relative;
+	} */
+
 	.myProject .clouds {
-		position: absolute;
-		top: 30%;
+		position: relative;
+		top: 65%;
 		left: 0;
 		width: 100%;
-		height: 1160px;
+		height: 100%;
 	}
 
 	.myProject .clouds img {
 		position: absolute;
 		bottom: 0;
-		width: 1100px;
+		width: 100%;
+		height: 800px;
 		animation: clouds calc(8s *var(--i)) linear infinite;
-	} */
+	} 
 
-	.myProject {
-		display: none;
-	}
-
-	/* @keyframes clouds {
+	@keyframes clouds {
 		0% {
 			transform: translateX(-100%);
 		}
@@ -1218,7 +1165,15 @@ body {
 		}
 	}
 
-	.myProject .content {
+	.myProject .imgGen {
+		display: none;
+	}
+
+	.myProject .nameProject {
+		display: none;
+	}
+
+	/*.myProject .content {
 		position: relative;
 		z-index: 5;
 		margin-top: 300px;
